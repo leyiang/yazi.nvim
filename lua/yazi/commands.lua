@@ -12,6 +12,11 @@ function M.create_yazi_commands()
         require("yazi").toggle()
       end,
     },
+    close = {
+      impl = function()
+        require("yazi").close()
+      end,
+    },
   }
 
   ---@param opts table :h lua-guide-commands-create

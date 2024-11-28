@@ -166,4 +166,19 @@ function M.setup(opts)
   end
 end
 
+function M.close()
+	if M.previous_state then
+		M.previous_state.last_hovered = nil
+	end
+
+	local YaziFloatingWindow = require("yazi.window").YaziFloatingWindow
+	if YaziFloatingWindow and YaziFloatingWindow.get_current then
+		local win = YaziFloatingWindow.get_current()
+		if win then
+		win:close()
+		end
+	end
+end
+
+
 return M
